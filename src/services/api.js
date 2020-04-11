@@ -1,7 +1,27 @@
 import axios from "axios";
 
-const api = axios.create({
+const urlApi = axios.create({
   baseURL: "http://localhost:3333",
 });
 
-export default api;
+export const getRepositories = async () => {
+  return urlApi.get('repositories')
+    .then(response => {
+      return response;
+    });
+}
+
+export const postRepositories = async (data) => {
+  return urlApi.post('repositories', data )
+    .then(response => {
+      return response;
+    });
+}
+
+export const deleteRepositories = async (id) => {
+  return urlApi.delete(`repositories/${id}`)
+    .then(response => {
+      return response;
+    });
+}
+
