@@ -17,7 +17,7 @@ function RepositoryList({ getAllRepositories, removeRepositories, addRepository,
                 title: 'Url', field: 'url',
                 render: rowData => <a className="url" href={rowData.url} target="_blank">{rowData.url}</a>,
             },
-            { title: 'Likes', field: 'likes', editable: 'never' },
+            // { title: 'Likes', field: 'likes', editable: 'never' },
             {
                 title: 'Techs', field: 'techs',
             }
