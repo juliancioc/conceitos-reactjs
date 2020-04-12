@@ -10,3 +10,8 @@ h1 {
 .icon-actions {
    margin: 4px;
 }
+
+.url {
+    text-decoration: none;
+    color: rgb(80, 69, 238);
+}

@@ -14,12 +14,10 @@ function RepositoryList({ getAllRepositories, removeRepositories, addRepository,
             { title: 'Title', field: 'title' },
             { title: 'Description', field: 'description' },
             {
-                title: 'url', field: 'url',
-                cellStyle: {
-                    color: '#039be5',
-                }
+                title: 'Url', field: 'url',
+                render: rowData => <a className="url" href={rowData.url} target="_blank">{rowData.url}</a>,
             },
-            { title: 'Likes', field: 'likes' },
+            { title: 'Likes', field: 'likes', editable: 'never' },
             {
                 title: 'Techs', field: 'techs',
             }
@@ -36,7 +34,8 @@ function RepositoryList({ getAllRepositories, removeRepositories, addRepository,
     }, []);
 
     return (
-        <div className="container">
+        <div className="container"
+            data-testid="repository-list">
             <MaterialTable
                 className="table"
                 isLoading={!repositories.data}
