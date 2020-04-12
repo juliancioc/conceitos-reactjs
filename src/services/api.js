@@ -25,3 +25,10 @@ export const deleteRepositories = async (id) => {
     });
 }
 
+export const putRepositories = async (data) => {
+  return urlApi.put(`repositories/${data.id}`, data)
+    .then(response => {
+      return response;
+    });
+}
+
